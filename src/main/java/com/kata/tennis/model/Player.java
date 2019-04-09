@@ -1,6 +1,6 @@
 package com.kata.tennis.model;
 
-import org.springframework.context.annotation.Bean;
+import com.kata.tennis.model.PlayerScores.Scores;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,6 +10,8 @@ public class Player {
   private PlayerFlag flag;
   private int previousScore;
   private int actualScore;
+  private Scores previousPointScore;
+  private Scores actualPointScore;
   
   public Player(String name, PlayerFlag flag) {
     this.name = name;
@@ -19,6 +21,20 @@ public class Player {
   public Player(int previousScore, int actualScore) {
     this.previousScore = previousScore;
     this.actualScore = actualScore;
+  }
+  
+  public Player(String name, PlayerFlag flag, int previousScore, int actualScore) {
+    this.name = name;
+    this.flag = flag;
+    this.previousScore = previousScore;
+    this.actualScore = actualScore;
+  }
+  
+  public Player(String name, PlayerFlag flag, Scores previousPointScore, Scores actualPointScore) {
+    this.name = name;
+    this.flag = flag;
+    this.previousPointScore = previousPointScore;
+    this.actualPointScore = actualPointScore;
   }
   
   public String getName() {
@@ -52,5 +68,20 @@ public class Player {
   public void setActualScore(int actualScore) {
     this.actualScore = actualScore;
   }
-
+  
+  public Scores getPreviousPointScore() {
+    return previousPointScore;
+  }
+  
+  public void setPreviousPointScore(Scores previousPointScore) {
+    this.previousPointScore = previousPointScore;
+  }
+  
+  public Scores getActualPointScore() {
+    return actualPointScore;
+  }
+  
+  public void setActualPointScore(Scores actualPointScore) {
+    this.actualPointScore = actualPointScore;
+  }
 }

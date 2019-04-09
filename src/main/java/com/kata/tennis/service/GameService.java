@@ -22,4 +22,13 @@ public class GameService implements IGameService {
     int flagResult = PlayerFlagHelper.generateRandomNumericFlag();
     return flagResult == 1 ? ONE : TWO;
   }
+  
+  @Override
+  public Player nextPointWinner(Player player1, Player player2) {
+    PlayerFlag flagWinner = getPointWinner();
+    return flagWinner == ONE ? player1 : player2;
+  }
+  
+  
+  
 }

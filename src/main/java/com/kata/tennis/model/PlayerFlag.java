@@ -1,7 +1,6 @@
 package com.kata.tennis.model;
 
 public enum PlayerFlag {
-  
   ONE, TWO;
   
   public static int getNumericFlag(PlayerFlag flag) {
